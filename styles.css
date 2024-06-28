@@ -9,13 +9,15 @@ body {
 }
 
 .container {
-    background-color: #ffffff; /* White background for the content area */
+    /* Define styles for the container */
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a light shadow */
-    width: 80%; /* Adjust the width as per your design */
-    max-width: 600px; /* Limit the maximum width */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease; /* Optional: Add a smooth transition */
 }
+
 
 .weather-info {
     background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
@@ -24,14 +26,20 @@ body {
     margin-top: 20px;
 }
 
-.sunny-bg {
-    background-image: url('sunny.jpg');
-}
 
-.rainy-bg {
-    background-image: url('rainy.jpg');
+.sunny-bg {
+    background-image: url('ocean-1861597_640.jpg'); /* Replace with your sunny weather background image */ /*sunny:85364
 }
 
 .cloudy-bg {
-    background-image: url('cloudy.jpg');
+    background-image: url('sky-921366_640.jpg'); /* Replace with your cloudy weather background image */
+}
+
+.rainy-bg {
+    background-image: url('rainy.jpg'); /* Replace with your rainy weather background image */
+}
+
+/* Default background when no specific weather condition matches */
+.default-bg {
+    background-image: url('default.jpg');
 }

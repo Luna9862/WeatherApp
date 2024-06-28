@@ -37,6 +37,7 @@ document.getElementById('weatherForm').addEventListener('submit', function(event
         .then(weatherData => {
             console.log(weatherData); // Log the weather data to see the structure
 
+            // Update weather information display
             const weatherInfo = document.getElementById('weatherInfo');
             weatherInfo.innerHTML = `
                 <h2>Weather in ${weatherData.name}</h2>
@@ -45,6 +46,9 @@ document.getElementById('weatherForm').addEventListener('submit', function(event
                 <p><strong>Current Conditions:</strong> ${weatherData.weather[0].description}</p>
                 <p><strong>High / Low Temperature:</strong> ${weatherData.main.temp_max}&deg;F / ${weatherData.main.temp_min}&deg;F</p>
             `;
+
+            // Call updateBackground with lowercase weather condition
+            updateBackground(weatherData.weather[0].main.toLowerCase());
         })
         .catch(error => {
             console.error('Error fetching data:', error);
@@ -52,27 +56,29 @@ document.getElementById('weatherForm').addEventListener('submit', function(event
             weatherInfo.innerHTML = '<p>Failed to fetch weather data. Please try again.</p>';
         });
 });
+
 function updateBackground(weatherCondition) {
-    const body = document.body;
+    const container = document.querySelector('.container');
 
     // Remove existing background classes
-    body.classList.remove('sunny-bg', 'rainy-bg', 'cloudy-bg');
+    container.classList.remove('sunny-bg', 'rainy-bg', 'cloudy-bg', 'default-bg');
 
     // Add corresponding background class based on weather condition
     switch (weatherCondition) {
-        case 'Clear':
-            body.classList.add('sunny-bg');
+        case 'clear':
+            container.classList.add('sunny-bg');
             break;
-        case 'Clouds':
-            body.classList.add('cloudy-bg');
+        case 'clouds':
+        case 'few clouds':
+            container.classList.add('cloudy-bg');
             break;
-        case 'Rain':
-        case 'Drizzle':
-        case 'Thunderstorm':
-            body.classList.add('rainy-bg');
+        case 'rain':
+        case 'drizzle':
+        case 'thunderstorm':
+            container.classList.add('rainy-bg');
             break;
         default:
-            // For any other weather condition, you can set a default background
-            body.style.backgroundImage = 'url("default.jpg")';
+            // For any other weather condition, set a default background
+            container.classList.add('default-bg');
     }
 }
