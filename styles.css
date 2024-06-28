@@ -1,0 +1,37 @@
+
+body {
+    background-color: #f0f0f0; /* Light gray background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff; /* White background for the content area */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a light shadow */
+    width: 80%; /* Adjust the width as per your design */
+    max-width: 600px; /* Limit the maximum width */
+}
+
+.weather-info {
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.sunny-bg {
+    background-image: url('sunny.jpg');
+}
+
+.rainy-bg {
+    background-image: url('rainy.jpg');
+}
+
+.cloudy-bg {
+    background-image: url('cloudy.jpg');
+}
