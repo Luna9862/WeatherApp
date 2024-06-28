@@ -1,6 +1,5 @@
 
 body {
-    background-color: #f0f0f0; /* Light gray background color */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +8,7 @@ body {
 }
 
 .container {
-    /* Define styles for the container */
+    color: #ccc;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -18,9 +17,20 @@ body {
     transition: background-image 0.5s ease; /* Optional: Add a smooth transition */
 }
 
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('umbrella-3380192_1280.jpg');
+    background-size: cover;
+    z-index: -1; /* Ensures the background stays behind other content */
+  }
+
 
 .weather-info {
-    background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+    background-color: rgba(60, 142, 180, 0.8); /* Transparent white background */
     padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
@@ -28,18 +38,17 @@ body {
 
 
 .sunny-bg {
-    background-image: url('ocean-1861597_640.jpg'); /* Replace with your sunny weather background image */ /*sunny:85364
-}
+    background-image: url('ocean-1861597_640.jpg'); /* Replace with your sunny weather background image */}
 
 .cloudy-bg {
-    background-image: url('sky-921366_640.jpg'); /* Replace with your cloudy weather background image */
+    background-image: url('sky-921366_640.jpg');
 }
 
 .rainy-bg {
-    background-image: url('rainy.jpg'); /* Replace with your rainy weather background image */
+    background-image: url('raindrops-3216607_640.jpg'); /* Replace with your rainy weather background image */
 }
 
 /* Default background when no specific weather condition matches */
 .default-bg {
-    background-image: url('default.jpg');
+    background-image: url('sunset-4086848_1280.jpg');
 }
